@@ -1,0 +1,238 @@
+.admin_menu {
+    background: #9ea6ad;
+    color: white;
+}
+
+.admin_menu li {
+    position: relative;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.admin_menu li:hover {
+    color: white;
+    background: #999999;
+}
+
+.admin_left_bar {
+    width: 100%;
+    background: #ddd;
+
+}
+
+.admin_left_bar li {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+.admin_left_bar li:hover {
+    background-color: #fff;
+}
+
+.admin_left_bar .focus{
+    background-image: url(/coocreading/images/cooc34.png);
+    background-repeat: no-repeat;
+}
+
+.admin_left_bar .focus:after{
+    content: " ";
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 10px;
+    border-color: transparent transparent transparent #555;
+}
+
+.admin_left_bar .focus div{
+    background: #fff
+}
+
+.admin_left_bar li div{
+    padding-left: 10px;
+}
+
+.publishYear {
+    width: 125px;
+}
+
+.th_bg_gray {
+  background-color: #F0F0F0;
+}
+
+.timebox {
+    border: 1px solid #ccc;
+    height: 35px;
+    width: 125px;
+    padding: 5px;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.timebox input {
+    border: none;
+    display: inline-block;
+    width: 79px;
+    height: 25px;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+.timebox .calendar_icon {
+    width: 26px;
+    height: 23px;
+    background: url(/coocreading/images/cooc40.png);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sb_search .book_name {
+    height: 35px;
+    width: 185px;
+    padding: 5px;
+    line-height: 35px;
+}
+
+.sb_search_bar {
+    margin-top: 20px;
+}
+
+.sb_search_bar div,
+.sb_search_bar button {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.splice_line {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.table_admin{
+    border:1px solid #ccc;
+    width: 100%;
+    font-size: 14px;
+}
+.table_admin thead{
+    background-color: #ddd
+}
+
+/*this is css hack to raise level*/
+.table_admin.table_admin td,
+.table_admin.table_admin th{
+    vertical-align: middle;
+}
+
+
+.admin_form_horizontal .form-group .control-label{
+    text-align: left;
+}
+.admin_left_button_container{
+    width: 100%;
+    padding: 20px 0;
+    text-align: right;
+}
+
+
+.inline_form_control input,
+.inline_form_control select{
+    width: 150px;
+    display: inline-block;
+}
+.inline_form_control p{
+    color: #ccc;
+    display: inline-block;
+    font-size: 10px;
+}
+.book_maintain_cover{
+    width: 120px;
+    height: 160px;
+}
+.imagebutton{
+    cursor: pointer;
+}
+#resource_mapping_form,
+#certification_manage_form{
+    margin: 20px 0;
+}
+.margin_tb_10{
+    margin: 10px 0;
+}
+.width130{
+    width: 130px;
+}
+.width100{
+    width: 100px;
+}
+.width200{
+    width: 200px;
+}
+.width250{
+    width: 250px;
+}
+.width80{
+    width: 80px;
+}
+.ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.report_table{
+    text-align: center;
+}
+
+.modal_content{
+  word-wrap: break-word;
+}
+
+.modal_reportReason_content{
+  word-wrap: break-word;
+}
+
+.btn_confirmed.select,
+.btn_shelves.select,
+.btn_cancel_impeach.select{
+/*    color: #468847;*/
+    background-color: #c47b6b;
+    border: 1px solid #904f44;
+    color: floralwhite;
+}
+
+.btn_confirmed, .btn_shelves, .btn_cancel_impeach {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}

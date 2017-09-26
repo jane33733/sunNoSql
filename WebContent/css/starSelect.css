@@ -1,0 +1,68 @@
+@charset "utf-8";
+.main_div {
+	width:360px;
+	height:50px;
+	margin:40px auto 0 40px;
+}
+
+.revinp{
+	float:left;
+	display:inline;
+}
+
+.revgrade{
+	margin-left:20px;
+}
+
+.level_hollow_left,.level_hollow_right,.level_entity_left,.level_entity_right{
+	float:left;
+	background-image:url(../images/test.png);
+	background-repeat:no-repeat;
+	display:inline-block;
+	width:13px;		
+	height:24px;
+}
+
+.level_hollow_left{
+	background-position:-21px 0px;
+}
+
+.level_hollow_right{
+	background-position:-67px 0px;
+}
+
+.level_entity_left{
+	background-position:0px 0px;
+}
+
+.level_entity_right{
+	background-position:-45px 0px;
+}
+
+/********静态星星打分样式***********/
+.showStartScore{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

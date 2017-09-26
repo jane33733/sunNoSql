@@ -1,0 +1,16 @@
+
+table{
+  border: 2px solid #E0607E;
+}
+thead {
+    background-color: #C10066;
+    color: #FFFFFF;
+}
+tr{
+  border: 1px solid #E0607E;
+}
+td{
+  border: 1px solid #E0607E;
+  color: #C10066;
+}
+

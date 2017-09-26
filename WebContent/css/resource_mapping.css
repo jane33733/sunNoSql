@@ -1,0 +1,95 @@
+
+#resource_main{
+	text-align: center;
+	position:absolute;
+	right:80px;
+	top: 50px;
+}
+
+#resource_main > div{
+	background-color: #f3f3f3;
+	margin-bottom: 20px;
+	width: 120px;
+	padding: 5px;
+}
+
+#resource_main .resource_container .resource_subtitle{
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+#resource_main .resource_container ul{
+	background-color: #f3f3f3;
+	/*width: 140px;*/
+	margin: 0 auto;
+	color: #ffffff;
+}
+
+#resource_main .resource_container li{
+	border-radius: 6px;
+	padding: 6px;
+	margin: 10px;
+	cursor: pointer;
+}
+#resource_main .resource_container .ebook li{
+	background-color: #c2786c; /*米紅*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space : nowrap;
+}
+
+#resource_main .resource_container .paperbook li{
+	background-color: #2a96fb; /*藍*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space : nowrap;
+}
+
+
+@media (min-width: 1024px){
+    #resource_main {
+    	right: 0;
+    }
+    .book_description_container, .book_title_for_rwd{
+    	width: 80%;
+    }
+}
+
+@media (max-width: 1024px){
+    #resource_main {
+        right: 0;
+    }
+    .book_description_container, .book_title_for_rwd{
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px){
+    #resource_main {
+    	right: 15px;
+    }
+    .book_description_container, .book_title_for_rwd{
+    	width: 80%;
+    }
+}
+
+@media (max-width: 667px){
+    #resource_main {
+    	right: 0;
+    }
+
+    .book_description_container, .book_title_for_rwd{
+    	width: 75%;
+    }
+}
+
+
+
+@media (max-width: 500px){
+    #resource_main {
+    	right: 0;
+    }
+    .book_description_container, .book_title_for_rwd{
+    	width: 50%;
+    }
+}

@@ -1,0 +1,143 @@
+.container.langbar p{
+    color: #aaa;
+    display: inline-block;
+    margin-left: 30px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.container.langbar p.selected{
+    color: #555;
+    text-decoration: none;
+}
+
+.logon_block{
+    position: absolute;
+    width: 115px;
+    height: 100px;
+    background-image: url(../images/logon_back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.logon_block.selected{
+    background-image: url(../images//logon_back_B.png);
+}
+
+.logon_block .logon_pic{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    border-radius: 50%;
+    top: 17px;
+    left: 40px;
+}
+
+.logon_block .logon_name{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    position: absolute;
+    left: 0;
+    top: 55px;
+}
+.logon_block .logon_name div{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.langbar {
+	/* 	margin: 0 auto; */
+	padding-top: 10px;
+	margin-bottom: 22px;
+	font-size: 14px;
+	/* 	width: 1100px; */
+	text-align: right;
+}
+
+.navigation.roleList.selected{
+    display: block;
+}
+
+.navigation.roleList{
+    position: absolute;
+    display: none;
+    top: 75px;
+    right: 0px;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    text-decoration: none;
+    width: 165px;
+    z-index: 100;
+}
+.navigation.roleList li{
+    text-align: right;
+    background: #EEE;
+    border: 1px solid #ccc;
+}
+.navigation.roleList li:hover{
+    background: white;
+}
+.navigation.roleList li.roleInfo.selected{
+    background-color: white;
+}
+.navigation.roleList li p{
+    text-decoration: none;
+    color: #555;
+    padding: 12px 5px;
+}
+.navigation.roleList li a{
+    text-decoration: none;
+    color: #555;
+    padding: 12px 5px;
+    display: block;
+}
+
+.drop_navigation{
+    background: transparent;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 80;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.rolemenu{
+    height: 76px;
+    position: relative;
+    width: 115px;
+}
+
+.header_1280 .rolemenu{
+    left: 1150px;
+}
+.header_1280 .logon_block{
+    top: -24px;
+    left: 0px;
+}
+
+.header_1024 .logon_block{
+    top: -24px;
+    left: 0px;
+}
+.header_1024 .rolemenu{
+    left: 900px;
+}
+.header_768 .logon_block{
+    top: 7px;
+    left: 0px;
+}
+.header_768 .rolemenu{
+    left: 140px;
+}
+.header_768 .navigation.roleList{
+    top: 100px;
+    right: -8px;
+}

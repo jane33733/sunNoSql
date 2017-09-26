@@ -1,0 +1,205 @@
+import org.gradle.plugins.ide.eclipse.model.Facet
+
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'com.bmuschko.tomcat'
+apply plugin: 'jacoco'
+
+
+sourceCompatibility = 1.8   // 設置 JDK 版本
+targetCompatibility = 1.8	// 打包war的jdk版本
+webAppDirName = 'WebContent'    // 設置 WebApp 根目錄
+
+ext.createdDate = new Date().format("yyyy-MM-dd HH:mm")
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'config'
+        }
+    }
+    test {
+        java {
+            srcDir 'test'
+        }
+       
+    }
+}
+
+test {
+    jacoco {
+        append = false
+        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+        classDumpFile = file("$buildDir/jacoco/classpathdumps")
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true
+        csv.enabled = true
+        html.enabled = true
+        
+    }
+   
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.2'
+    }
+}
+
+// 設置 maven 庫地址
+repositories {  
+    mavenCentral() // 中央庫
+    // maven { url 'http://maven.oschina.net/content/groups/public/' } // 自定義庫地址
+}
+
+
+
+def springVersion = "4.2.5.RELEASE"
+def jdkVersion = "1.8"
+def junitVersion = "4.12"
+def logbackVersion = "1.1.3"
+def jclOverSlf4jVersion = "1.7.14"
+def jstlVersion = "1.2"
+def hamcrestVersion = "1.3"
+def servletApiVersion = "3.0.1"
+
+jacoco {
+    toolVersion = "0.7.6.201602180812"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+
+// 設置依賴
+dependencies {
+	def tomcatVersion = '7.0.59'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    
+    
+    providedRuntime 'javax.servlet:jstl:1.2'    // 運行時
+    
+    //logger
+	compile 'org.slf4j:slf4j-simple:1.7.23'
+	compile 'org.slf4j:slf4j-api:1.7.23'
+	compile 'log4j:log4j:1.2.17'
+
+	//aop
+    compile 'org.aspectj:aspectjweaver:1.8.9'    
+    compile 'org.jsoup:jsoup:1.9.1'
+
+    //spring	
+    compile 'org.springframework:spring-webmvc:' +springVersion
+    compile 'org.springframework:spring-core:' +springVersion
+    compile 'org.springframework:spring-orm:' +springVersion
+    compile 'org.springframework:spring-tx:' +springVersion
+    compile 'org.springframework:spring-aop:' +springVersion
+    compile 'org.springframework:spring-aspects:' +springVersion
+    compile 'org.springframework:spring-beans:' +springVersion
+    
+    //spring security
+    compile 'org.springframework.security:spring-security-web:4.0.4.RELEASE'
+    compile 'org.springframework.security:spring-security-config:4.0.4.RELEASE'      
+    
+    //hibernate
+    compile 'org.hibernate:hibernate-core:5.1.0.Final'
+    compile 'org.hibernate:hibernate-validator:5.2.4.Final'
+    
+    compile 'commons-dbcp:commons-dbcp:1.4'    
+    compile 'mysql:mysql-connector-java:5.1.38'    
+	compile 'javax.servlet:jstl:' + jstlVersion  
+	compile 'commons-collections:commons-collections:3.2.2'
+	compile 'commons-codec:commons-codec:1.9'	
+    compile 'commons-fileupload:commons-fileupload:1.2.2'
+	compile 'p6spy:p6spy:2.2.0'	        
+	compile 'org.apache.commons:commons-lang3:3.4'
+    
+    compile 'com.google.code.gson:gson:1.5'
+    
+    // https://mvnrepository.com/artifact/javax.mail/mail
+	compile group: 'javax.mail', name: 'mail', version: '1.5.0-b01'
+    
+    
+    //apache : try to fix @EventListener NoClassDefFoundError
+    //compile 'org.apache.httpcomponents:httpcore:4.4.4'
+    //compile 'org.apache.httpcomponents:httpclient:4.5.1'
+    //compile 'org.apache.velocity:velocity:1.6.4'
+    //compile 'org.apache.httpcomponents:httpmime:4.1.2'
+    //compile 'org.apache.poi:poi-ooxml:3.10.1'
+    compile 'org.apache.xmlbeans:xmlbeans:2.6.0'
+    
+    //try jsp web page
+    compile 'jstl:jstl:1.2'
+    
+    compile 'com.fasterxml.jackson.core:jackson-core:2.3.3'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.3.0'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.3.3'
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.8.3'
+    compile 'org.codehaus.jackson:jackson-core-asl:1.8.3'
+    
+    // Unit testing dependencies
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.hamcrest:hamcrest-library:1.3'
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.4'
+    
+    testCompile 'org.springframework:spring-test:' + springVersion
+    
+	//include in compile only, exclude in the war
+    providedCompile 'javax.servlet:javax.servlet-api:' + servletApiVersion
+    
+    //Bat
+    //compile 'org.springframework.boot:spring-boot-starter:1.2.7.RELEASE'
+  	compile 'org.quartz-scheduler:quartz:2.2.2'
+  	compile 'org.springframework:spring-context-support:4.1.8.RELEASE'
+ 
+ 	runtime 'javax.el:el-api:2.2'   
+}
+
+compileJava.options.encoding = 'UTF-8'
+tomcatRun.URIEncoding = 'UTF-8'
+tomcat {
+    httpPort = 8080
+    httpsPort = 8443
+    enableSSL = true
+    contextPath = 'janePractice'
+}
+
+// 設置 Project Facets
+eclipse {
+    wtp {
+        facet {
+            facet name: 'jst.web', type: Facet.FacetType.fixed
+            facet name: 'wst.jsdt.web', type: Facet.FacetType.fixed
+            facet name: 'jst.java', type: Facet.FacetType.fixed
+            facet name: 'jst.web', version: '3.0'
+            facet name: 'jst.java', version: '1.7'
+            facet name: 'wst.jsdt.web', version: '1.0'
+        }
+    }
+}
+
+
+war {
+    doFirst {
+        manifest {
+            attributes  'Project-Version': '1.0.0',
+                    'JVM-Target': targetCompatibility,
+                    'Created-Date': project.createdDate
+        }
+    }
+
+    archiveName 'sunUT.war'
+}

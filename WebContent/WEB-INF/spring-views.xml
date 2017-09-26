@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- 測試首頁 -->
+	<bean id="index" class="org.springframework.web.servlet.view.JstlView">
+		<property name="url" value="/WEB-INF/index.jsp" />
+	</bean>
+	
+	<!-- 錯誤詳細資訊頁 -->
+	<bean id="errorDetail" class="org.springframework.web.servlet.view.JstlView">
+		<property name="url" value="/WEB-INF/pages/error/errorDetail.jsp" />
+	</bean>
+
+	<!--錯誤簡略資訊頁 -->
+	<bean id="errorSimple" class="org.springframework.web.servlet.view.JstlView">
+		<property name="url" value="/WEB-INF/pages/error/errorSimple.jsp" />
+	</bean>
+
+
+
+
+</beans>

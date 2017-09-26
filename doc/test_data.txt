@@ -1,0 +1,23 @@
+
+-- 測試資料
+
+/*!40000 ALTER TABLE `sun_account` DISABLE KEYS */;
+INSERT INTO `sun_account` (`id`, `account`, `password`, `user_id`, `status`, `create_time`) VALUES
+	('01', 'haha', '123', '001', 0, '2017-03-03 16:56:39');
+/*!40000 ALTER TABLE `sun_account` ENABLE KEYS */;
+
+
+/*!40000 ALTER TABLE `sun_product` DISABLE KEYS */;
+INSERT INTO `sun_product` (`id`, `name`, `price`, `create_time`) VALUES
+	('01', '白色帆布鞋', 290.00, '2017-03-03 16:53:51'),
+	('02', '馴鹿花紋藍底毛衣', 399.00, '2017-03-03 16:54:37'),
+	('03', '紅色高腰裙', 300.00, '2017-03-03 16:55:27');
+/*!40000 ALTER TABLE `sun_product` ENABLE KEYS */;
+
+
+/*!40000 ALTER TABLE `sun_user` DISABLE KEYS */;
+INSERT INTO `sun_user` (`id`, `name`, `nick_name`, `birthday`, `create_time`) VALUES
+	('001', '張韶涵', 'Angela', '2007-03-21', '2017-03-21 13:59:55');
+/*!40000 ALTER TABLE `sun_user` ENABLE KEYS */;
+
+
