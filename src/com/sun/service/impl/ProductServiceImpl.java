@@ -6,11 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.gson.Gson;
 import com.sun.dao.ProductDao;
-import com.sun.entity.Product;
 import com.sun.request.vo.ProductQueryVO;
 import com.sun.respose.vo.ProductInfoVO;
 import com.sun.service.ProductService;
+import com.sun.vo.db.Product;
 
 /**
  * The Class ImpeachServiceImpl.
@@ -23,6 +24,7 @@ public class ProductServiceImpl implements ProductService {
     
     @Autowired
     private ProductDao productDao;
+    private Gson gson = new Gson();
 
 	@Override
 	public List<ProductInfoVO> search(final int id) {
@@ -30,15 +32,7 @@ public class ProductServiceImpl implements ProductService {
 		List<ProductInfoVO> pInfoList = new ArrayList<ProductInfoVO>();
 		try {
 					
-			searchList = productDao.getAll();
-			for (Product product : searchList) {
-				ProductInfoVO productInfoVO = new ProductInfoVO();
-				productInfoVO.setId(product.getId());
-				productInfoVO.setName(product.getName());
-				productInfoVO.setPrice(product.getPrice());
-				productInfoVO.setCreateTime(product.getCreateTime());
-				pInfoList.add(productInfoVO);
-			}
+//			searchList = productDao.getAll();
 			
 			
 		} catch (Exception e) {
@@ -49,10 +43,11 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<Product> searchByCondition(ProductQueryVO queryVO) {
+	public List<Product> addProduct(Product product) {
 		List<Product> productList = null;
-		
-		productList = productDao.getByPrice(queryVO);
+		ProductDao productDao = new ProductDao();
+		productList = productDao.insert(product);
+		System.out.println(gson.toJson(productList));
 		
 		return productList;
 	}

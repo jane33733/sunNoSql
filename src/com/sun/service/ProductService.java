@@ -2,9 +2,8 @@ package com.sun.service;
 
 import java.util.List;
 
-import com.sun.entity.Product;
-import com.sun.request.vo.ProductQueryVO;
 import com.sun.respose.vo.ProductInfoVO;
+import com.sun.vo.db.Product;
 
 public interface ProductService {
 	
@@ -17,7 +16,7 @@ public interface ProductService {
 	List<ProductInfoVO> search(final int id);
 	
 	
-	List<Product> searchByCondition(final ProductQueryVO queryVO);
+	List<Product> addProduct(final Product product);
 	
 	
 	
