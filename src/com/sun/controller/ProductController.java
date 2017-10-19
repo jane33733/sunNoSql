@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
 import com.sun.respose.vo.ProductInfoVO;
 import com.sun.service.ProductService;
 import com.sun.vo.db.Product;
@@ -32,6 +33,8 @@ public class ProductController  {
     @Autowired
     private ProductService productService;
     
+    private Gson gson = new Gson();
+    
     /**
      * Search.
      *
@@ -40,21 +43,28 @@ public class ProductController  {
      * @throws Exception the exception
      */
     @ResponseBody
-    @RequestMapping(value = "getByPrice", method = RequestMethod.POST)
-    public List<Product> getByPrice(@RequestBody Product product) throws Exception {
-        // LOGGER.debug("[getByPrice]------ Start "+queryVO.getPriceBottom());
-//        System.out.println("[getByPrice]------ Start "+queryVO.getPriceBottom());
-    	productService.addProduct(product);
-        return null;
+    @RequestMapping(value = "addProduct", method = RequestMethod.POST)
+    public List<Product> addProduct(@RequestBody Product inputVO) throws Exception {
+        LOGGER.info("[addProduct]------ Start ");
+        LOGGER.debug("inputVO: {} ", gson.toJson(inputVO) );
+        return productService.addProduct(inputVO);
     }
     
     @ResponseBody
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<ProductInfoVO> search() throws Exception {
         LOGGER.debug("[getAll]------ Start ");
-        List<ProductInfoVO> productList = productService.search(1);
+        List<ProductInfoVO> productList = productService.search();
         
         return productList;
+    }
+    
+    
+    @ResponseBody
+    @RequestMapping(value = "deleteProduct", method = RequestMethod.GET)
+    public boolean deleteProduct(String pId) throws Exception {
+        LOGGER.debug("[deleteProduct]------ Start, pId={} ", pId);
+        return productService.deleteProduct(pId);
     }
     
 

@@ -7,16 +7,11 @@ import com.sun.vo.db.Product;
 
 public interface ProductService {
 	
-	/**
-	 * Search.
-	 *
-	 * @param impeachSearchVO the impeach search VO
-	 * @return the list
-	 */
-	List<ProductInfoVO> search(final int id);
-	
+	List<ProductInfoVO> search();
 	
 	List<Product> addProduct(final Product product);
+	
+	boolean deleteProduct(final String pId);
 	
 	
 	

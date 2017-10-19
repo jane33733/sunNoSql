@@ -53,17 +53,6 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	
-	<!-- 登入 -->
-	<servlet>
-    <description></description>
-    <display-name>LoginServlet</display-name>
-    <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>com.sun.servlet.LoginServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-	  <servlet-name>LoginServlet</servlet-name>
-	  <url-pattern>/LoginServlet</url-pattern>
-	</servlet-mapping>
   
 	
 	

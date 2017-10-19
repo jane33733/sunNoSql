@@ -5,8 +5,6 @@ apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'com.bmuschko.tomcat'
-apply plugin: 'jacoco'
-
 
 sourceCompatibility = 1.8   // 設置 JDK 版本
 targetCompatibility = 1.8	// 打包war的jdk版本
@@ -31,23 +29,6 @@ sourceSets {
     }
 }
 
-test {
-    jacoco {
-        append = false
-        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
-        classDumpFile = file("$buildDir/jacoco/classpathdumps")
-    }
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled = true
-        csv.enabled = true
-        html.enabled = true
-        
-    }
-   
-}
 
 buildscript {
     repositories {
@@ -76,10 +57,6 @@ def jstlVersion = "1.2"
 def hamcrestVersion = "1.3"
 def servletApiVersion = "3.0.1"
 
-jacoco {
-    toolVersion = "0.7.6.201602180812"
-    reportsDir = file("$buildDir/customJacocoReportDir")
-}
 
 // 設置依賴
 dependencies {
@@ -89,8 +66,14 @@ dependencies {
             "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
     testCompile group: 'junit', name: 'junit', version: '4.11'
     
-    
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+	providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
     providedRuntime 'javax.servlet:jstl:1.2'    // 運行時
+    //try jsp web page
+    compile 'jstl:jstl:1.2'
+    //runtime 'javax.el:el-api:2.2'   
+ 	// https://mvnrepository.com/artifact/javax.el/javax.el-api
+	compile group: 'javax.el', name: 'javax.el-api', version: '3.0.0'
     
     //logger
 	compile 'org.slf4j:slf4j-simple:1.7.23'
@@ -120,7 +103,6 @@ dependencies {
     
     compile 'commons-dbcp:commons-dbcp:1.4'    
     compile 'mysql:mysql-connector-java:5.1.38'    
-	compile 'javax.servlet:jstl:' + jstlVersion  
 	compile 'commons-collections:commons-collections:3.2.2'
 	compile 'commons-codec:commons-codec:1.9'	
     compile 'commons-fileupload:commons-fileupload:1.2.2'
@@ -140,8 +122,6 @@ dependencies {
     
     compile 'org.apache.xmlbeans:xmlbeans:2.6.0'
     
-    //try jsp web page
-    compile 'jstl:jstl:1.2'
     
     compile 'com.fasterxml.jackson.core:jackson-core:2.3.3'
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.3.0'
@@ -152,19 +132,19 @@ dependencies {
     // Unit testing dependencies
     testCompile 'junit:junit:4.12'
     testCompile 'org.hamcrest:hamcrest-library:1.3'
-    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.4'
     
     testCompile 'org.springframework:spring-test:' + springVersion
     
-	//include in compile only, exclude in the war
-    providedCompile 'javax.servlet:javax.servlet-api:' + servletApiVersion
+    
+    
     
     //Bat
     //compile 'org.springframework.boot:spring-boot-starter:1.2.7.RELEASE'
   	compile 'org.quartz-scheduler:quartz:2.2.2'
   	compile 'org.springframework:spring-context-support:4.1.8.RELEASE'
  
- 	runtime 'javax.el:el-api:2.2'   
+ 	
+ 	
 }
 
 compileJava.options.encoding = 'UTF-8'
@@ -173,7 +153,7 @@ tomcat {
     httpPort = 8080
     httpsPort = 8443
     enableSSL = true
-    contextPath = 'janePractice'
+    contextPath = 'noSqlDbPractice'
 }
 
 // 設置 Project Facets
