@@ -71,9 +71,6 @@ dependencies {
     providedRuntime 'javax.servlet:jstl:1.2'    // 運行時
     //try jsp web page
     compile 'jstl:jstl:1.2'
-    //runtime 'javax.el:el-api:2.2'   
- 	// https://mvnrepository.com/artifact/javax.el/javax.el-api
-	compile group: 'javax.el', name: 'javax.el-api', version: '3.0.0'
     
     //logger
 	compile 'org.slf4j:slf4j-simple:1.7.23'
