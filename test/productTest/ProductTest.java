@@ -10,6 +10,7 @@ import com.sun.vo.db.Product;
 
 public class ProductTest {
 
+	private String testExcel = "D:\\testCase.xlsx";
 	private Gson gson = new Gson();
 	
 	public void insert() {
@@ -34,7 +35,42 @@ public class ProductTest {
 	public void delete() {
 		ProductService ps = new ProductServiceImpl();
 		ps.deleteProduct("A001");
-		
 	}
+	
+//	public List<BoardVO> getTestData() {
+//	
+//	List<BoardVO> dataList = new ArrayList<>();
+//	try {
+//		FileInputStream fis = new FileInputStream(new File(testExcel));
+//		
+//		XSSFWorkbook wb = new XSSFWorkbook(fis);
+//		XSSFSheet sh = wb.getSheetAt(0);
+//		int colNum = sh.getRow(0).getLastCellNum();
+//		int rowNum = sh.getLastRowNum()+1;
+//		
+//		for (int i = 1; i < rowNum; i++) {
+//			XSSFRow row = sh.getRow(i);
+//			BoardVO inputVO = new BoardVO();
+//			inputVO.setPlant(row.getCell(0).getStringCellValue());
+//			inputVO.setStartTime( Integer.parseInt(row.getCell(1).getStringCellValue()) );
+//			inputVO.setLine(row.getCell(2).getStringCellValue());
+//			inputVO.setQty( (int)(row.getCell(3).getNumericCellValue()));
+//			inputVO.setPn(row.getCell(4).getStringCellValue());
+//			inputVO.setModel(row.getCell(5).getStringCellValue());
+//			dataList.add(inputVO);
+////			for (int j = 1; j < colNum; j++) {
+////				XSSFCell col = row.getCell(j);
+////			}
+//		}
+//	
+//		System.out.println("[test data]"+gson.toJson(dataList));
+//		
+////		fun.addCalendar(inputList, userId);
+//	} catch (Exception e) {
+//		e.printStackTrace();
+//	}
+//	return dataList;
+//}
+
 	
 }
