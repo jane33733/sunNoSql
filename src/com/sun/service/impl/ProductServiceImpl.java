@@ -10,8 +10,6 @@ import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 import com.sun.dao.ProductDao;
-import com.sun.request.vo.ProductQueryVO;
-import com.sun.respose.vo.ProductInfoVO;
 import com.sun.service.ProductService;
 import com.sun.vo.db.Product;
 
@@ -25,36 +23,38 @@ public class ProductServiceImpl implements ProductService {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductServiceImpl.class);
     
     @Autowired
-    private ProductDao productDao;
+    private ProductDao productDao = new ProductDao();
+    
     private Gson gson = new Gson();
 
 	@Override
-	public List<ProductInfoVO> search() {
-		List<Product> searchList = new ArrayList<Product>();
-		List<ProductInfoVO> pInfoList = new ArrayList<ProductInfoVO>();
+	public List<Product> queryAll() {
+		List<Product> resultList = new ArrayList<Product>();
 		try {
-//			searchList = productDao.getAll();
+			resultList = productDao.query();
+			System.out.println(gson.toJson(resultList));
 		} catch (Exception e) {
 			LOGGER.debug("search fail : {}",e);
 		}
 		
-		return pInfoList;
+		return resultList;
 	}
 
 	@Override
-	public List<Product> addProduct(Product product) {
-		List<Product> productList = null;
-		ProductDao productDao = new ProductDao();
-		productList = productDao.insert(product);
-		System.out.println(gson.toJson(productList));
-		
-		return productList;
-	}
-
-	@Override
-	public boolean deleteProduct(final String pId) {
+	public boolean addProduct(Product product) {
 		boolean result = false;
+		ProductDao productDao = new ProductDao();
+		result = productDao.insert(product);
 		return result;
+	}
+
+	@Override
+	public String deleteProduct(final String pId) {
+		boolean result = false;
+		ProductDao productDao = new ProductDao();
+		result = productDao.delete(pId);
+		
+		return (result ? pId : "");
 	}
 	
 }

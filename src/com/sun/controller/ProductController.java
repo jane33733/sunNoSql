@@ -44,7 +44,7 @@ public class ProductController  {
      */
     @ResponseBody
     @RequestMapping(value = "addProduct", method = RequestMethod.POST)
-    public List<Product> addProduct(@RequestBody Product inputVO) throws Exception {
+    public boolean addProduct(@RequestBody Product inputVO) throws Exception {
         LOGGER.info("[addProduct]------ Start ");
         LOGGER.debug("inputVO: {} ", gson.toJson(inputVO) );
         return productService.addProduct(inputVO);
@@ -52,9 +52,9 @@ public class ProductController  {
     
     @ResponseBody
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
-    public List<ProductInfoVO> search() throws Exception {
+    public List<Product> getAll() throws Exception {
         LOGGER.debug("[getAll]------ Start ");
-        List<ProductInfoVO> productList = productService.search();
+        List<Product> productList = productService.queryAll();
         
         return productList;
     }
@@ -62,7 +62,7 @@ public class ProductController  {
     
     @ResponseBody
     @RequestMapping(value = "deleteProduct", method = RequestMethod.GET)
-    public boolean deleteProduct(String pId) throws Exception {
+    public String deleteProduct(String pId) throws Exception {
         LOGGER.debug("[deleteProduct]------ Start, pId={} ", pId);
         return productService.deleteProduct(pId);
     }

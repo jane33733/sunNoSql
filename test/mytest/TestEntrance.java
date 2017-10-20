@@ -14,7 +14,9 @@ public class TestEntrance {
 	public void test() {
 		
 		ProductTest pt = new ProductTest();
-		pt.insert();
+//		pt.insert();
+		pt.query();
+//		pt.delete();
 		
 	}
 

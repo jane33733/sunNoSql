@@ -1,27 +1,33 @@
 package com.sun.vo.db;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
-import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
 
-@Entity("employees")
+@Entity("Product")
 public class Product {
 
 	@Id
-	private ObjectId pId;
+	private String pId;
 	
+	@Property("name")
 	private String name;
 	
-	@Property("wage")
+	@Property("price")
 	private BigDecimal price;
 	
-	public ObjectId getpId() {
+	@Property("createTime")
+	private LocalDateTime createTime;
+	
+	
+	
+	public String getpId() {
 		return pId;
 	}
-	public void setpId(ObjectId pId) {
+	public void setpId(String pId) {
 		this.pId = pId;
 	}
 	public String getName() {
@@ -35,6 +41,12 @@ public class Product {
 	}
 	public void setPrice(BigDecimal price) {
 		this.price = price;
+	}
+	public LocalDateTime getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(LocalDateTime createTime) {
+		this.createTime = createTime;
 	}
 	
 }

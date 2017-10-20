@@ -38,6 +38,29 @@
 			<br>
 			
 
+			<div class="card bg-light mb-3" style="max-width: 20rem;">
+			  <div class="card-header">DELETE Product</div>
+			  <div class="card-body">
+			    <h4 class="card-title">刪除產品</h4>
+			    <p class="card-text">
+			    	<!-- 刪除的form -->
+					<form class="form-inline">
+					
+						<label for="rg-from">欲刪除的產品ID</label>
+						<div class="form-group">
+						  <input type="text" id="delPid" name="rg-from" class="form-control">
+						</div>
+						
+						<!--practice restful GET -->
+						<button type="button" class="btn btn-primary fr" id="deleteBtn">
+							刪除產品
+						</button>
+					
+					</form>
+			    </p>
+			  </div>
+			</div>
+			
 			
 			
 		</div>
