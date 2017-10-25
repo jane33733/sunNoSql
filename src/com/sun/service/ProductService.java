@@ -10,6 +10,8 @@ public interface ProductService {
 	
 	boolean addProduct(final Product product);
 	
+	boolean addProductList(final List<Product> productList);
+	
 	String deleteProduct(final String pId);
 	
 }

@@ -47,6 +47,14 @@ public class ProductServiceImpl implements ProductService {
 		result = productDao.insert(product);
 		return result;
 	}
+	
+	@Override
+	public boolean addProductList(List<Product> productList) {
+		boolean result = false;
+		ProductDao productDao = new ProductDao();
+		result = productDao.insertBatch(productList);
+		return result;
+	}
 
 	@Override
 	public String deleteProduct(final String pId) {

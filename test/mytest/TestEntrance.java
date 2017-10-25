@@ -17,6 +17,7 @@ public class TestEntrance {
 //		pt.insert();
 		pt.query();
 //		pt.delete();
+//		pt.create5();
 		
 	}
 

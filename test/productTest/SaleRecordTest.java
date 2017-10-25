@@ -1,6 +1,8 @@
 package productTest;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,26 +10,43 @@ import com.google.gson.Gson;
 import com.sun.service.ProductService;
 import com.sun.service.impl.ProductServiceImpl;
 import com.sun.vo.db.Product;
+import com.sun.vo.db.SaleRecord;
 
-public class ProductTest {
+public class SaleRecordTest {
 
 	private String testExcel = "D:\\testCase.xlsx";
 	private Gson gson = new Gson();
 	
-	public void create5() {
+	public void create20million() {
 		ProductService ps = new ProductServiceImpl();
 		
-		List<Product> pList = new ArrayList();
-		String[] nameArr = {"伯爵紅茶", "梅子綠茶", "珍珠奶茶", "美式咖啡", "抹茶拿鐵"};
-		int[] priceArr = {20, 35, 50, 80, 130};
+		LocalDateTime nowStamp = LocalDateTime.now();
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		System.out.println("計算資料新稱需要的時間" + dtf.format(nowStamp));
 		
-		for (int i = 0; i < 5; i++) {
-			pList.add(Product.create("A00"+i, nameArr[i], priceArr[i]));
+		List<SaleRecord> recordList = new ArrayList();
+		
+		int pId = 1;
+		int amount = 1;
+		for (int i = 0; i < 200000; i++) {
+			
+			pId = this.randomWithRange(0, 4);
+			amount = this.randomWithRange(1, 1000);
+			
+//			recordList.add(SaleRecord.create(String.format(	"%06d", i),"A00"+pId, amount, ));
 		}
 		
-		System.out.println("新增" + gson.toJson(pList) );
-		ps.addProductList(pList);
+		System.out.println("新增" + gson.toJson(recordList) );
+//		ps.addProductList(recordList);
 		
+		nowStamp = LocalDateTime.now();
+		System.out.println("結束時間" + dtf.format(nowStamp));
+		
+	}
+	
+	private int randomWithRange(int min, int max){
+	   int range = (max - min) + 1;     
+	   return (int)(Math.random() * range) + min;
 	}
 	
 	public void insert() {

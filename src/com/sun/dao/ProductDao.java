@@ -31,6 +31,21 @@ public class ProductDao{
         return result;
     }
 	
+	public boolean insertBatch(List<Product> productList) {
+		boolean result = true;
+		Datastore dataStore = null;
+		try {
+			dataStore = MongoUtil.getMorphia();
+			dataStore.save(productList);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			result = false;
+			
+		}
+		return result;
+	}
+	
 	public List<Product> query() {
 		List<Product> productList = new ArrayList<>();
 		Datastore dataStore = MongoUtil.getMorphia();

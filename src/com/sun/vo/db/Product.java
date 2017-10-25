@@ -23,6 +23,14 @@ public class Product {
 	private LocalDateTime createTime;
 	
 	
+	public static Product create(String id, String name, int price) {
+		Product p = new Product();
+		p.setpId(id);
+		p.setName(name);
+		p.setPrice(new BigDecimal(price));
+		p.setCreateTime(LocalDateTime.now());
+		return p;
+	}
 	
 	public String getpId() {
 		return pId;
