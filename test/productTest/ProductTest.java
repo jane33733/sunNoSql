@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import com.sun.service.ProductService;
 import com.sun.service.impl.ProductServiceImpl;
 import com.sun.vo.db.Product;
+import com.sun.vo.output.ProductInfoVO;
 
 public class ProductTest {
 
@@ -45,7 +46,7 @@ public class ProductTest {
 
 	public void query() {
 		ProductService ps = new ProductServiceImpl();
-		List<Product> result = ps.queryAll();
+		List<ProductInfoVO> result = ps.queryAll();
 		System.out.println("所有產品" + gson.toJson(result));
 	}
 	

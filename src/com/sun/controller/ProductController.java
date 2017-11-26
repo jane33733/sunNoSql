@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
-import com.sun.respose.vo.ProductInfoVO;
 import com.sun.service.ProductService;
 import com.sun.vo.db.Product;
+import com.sun.vo.output.ProductInfoVO;
 
 
 
@@ -35,13 +35,6 @@ public class ProductController  {
     
     private Gson gson = new Gson();
     
-    /**
-     * Search.
-     *
-     * @param statisticsRptQueryVO the statistics rpt query VO
-     * @return the exe result VO
-     * @throws Exception the exception
-     */
     @ResponseBody
     @RequestMapping(value = "addProduct", method = RequestMethod.POST)
     public boolean addProduct(@RequestBody Product inputVO) throws Exception {
@@ -52,9 +45,10 @@ public class ProductController  {
     
     @ResponseBody
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
-    public List<Product> getAll() throws Exception {
+    public List<ProductInfoVO> getAll() throws Exception {
         LOGGER.debug("[getAll]------ Start ");
-        List<Product> productList = productService.queryAll();
+        System.out.println("[getAll]------ Start");
+        List<ProductInfoVO> productList = productService.queryAll();
         
         return productList;
     }

@@ -6,6 +6,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
 	<display-name>read</display-name>
+	
 	<!-- 控制jsp:include的編碼 -->
 	<jsp-config>
 		<jsp-property-group>
@@ -54,16 +55,16 @@
 	</listener>
 	
   
+	<!-- 增加找xml的參數 -->
+	<listener>
+	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+	    <param-name>contextConfigLocation</param-name>
+	    <param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
 	
 	
-	
-	<error-page>
-		<error-code>404</error-code>
-		<location>/pages/error/errorSimple.jsp</location>
-	</error-page>
-	<error-page>
-		<error-code>500</error-code>
-		<location>/pages/error/errorSimple.jsp</location>
-	</error-page>
+
 
 </web-app>

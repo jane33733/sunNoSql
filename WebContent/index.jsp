@@ -34,7 +34,7 @@
 			</button>
 			
 			<br>
-			---------
+			<hr/>
 			<br>
 			
 
@@ -57,7 +57,7 @@
 						</button>
 					
 					</form>
-			    </p>
+
 			  </div>
 			</div>
 			
@@ -80,18 +80,11 @@
 			<!--以下為固定標頭-->
 			<thead>
 				<tr>
-				<f:bundle basename="messages">
-					<!--產品編號--> 
-					<th><f:message key="productId"></f:message></th>
-					<!--產品名稱--> 
-					<th><f:message key="productName"></f:message></th>
-					<!--價格--> 
-					<th><f:message key="productPrice"></f:message></th>
-					<!--時間--> 
-					<th><f:message key="createTime"></f:message></th>
-					<!--查看-->
-					<th><f:message key="detail"></f:message></th>
-		        </f:bundle>
+					<th>產品編號</th>
+					<th>產品名稱</th>
+					<th>價格</th>
+					<th>時間</th>
+					<th></th>
 				</tr>
 			</thead>
 			

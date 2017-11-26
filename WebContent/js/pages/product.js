@@ -4,20 +4,15 @@ var character;
 var productList = [];
 var $dynamicTableBlock;
 var $dynamicTableSpace;
-var mainUrl = $("#mainUrl").val();
 
-function documentReady() {
-	$('#deleteBtn').click(deleteProduct);
-}
-$(document).ready(documentReady);
-
+var mainUrl ='/noSql';
 
 function getAllProduct(){
 	$('#product_table').hide();
 	$('#no_result').hide();
 	
 	jQuery.ajax({
-	    url: mainUrl + "product/getAll.do",
+	    url: mainUrl + "/product/getAll.do",
 	    dataType: "json",
 	    type: "GET",
 	    contentType: 'application/json; charset=utf-8',
@@ -42,7 +37,7 @@ function getProductByPrice(){
 	    };
 	
 	jQuery.ajax({
-		url: mainUrl + "product/getByPrice.do",
+		url: mainUrl + "product/getByPrice.go",
 		data: JSON.stringify(productQueryVO),
 		dataType: "json",
 		type: "POST",
@@ -83,13 +78,14 @@ function searchError(){
 
 function dbDataTable(resultData){
 	var tableHtml;
+	var resultList = document.getElementById('product_table');
 	resultData.forEach(function(dbData, index){
         //tableHtml = $('<tr/>');
 		tableHtml.append("<tr id ='" + dbData.pId + "'>");
         tableHtml.append("<td>" + dbData.pId + "</td>");
         tableHtml.append("<td>" + dbData.name + "</td>");
         tableHtml.append("<td>" + dbData.price + "</td>");
-//        tableHtml.append("<td>" + dbData.createTime + "</td>");
+        tableHtml.append("<td>" + dbData.createTime + "</td>");
 //        tableHtml.append("<td> </td>");
         tableHtml.append("<tr/>");
         

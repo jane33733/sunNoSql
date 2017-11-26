@@ -1,5 +1,6 @@
 package com.sun.service.impl;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import com.google.gson.Gson;
 import com.sun.dao.ProductDao;
 import com.sun.service.ProductService;
 import com.sun.vo.db.Product;
+import com.sun.vo.output.ProductInfoVO;
 
 /**
  * The Class ImpeachServiceImpl.
@@ -28,16 +30,26 @@ public class ProductServiceImpl implements ProductService {
     private Gson gson = new Gson();
 
 	@Override
-	public List<Product> queryAll() {
+	public List<ProductInfoVO> queryAll() {
 		List<Product> resultList = new ArrayList<Product>();
+		List<ProductInfoVO> infoList = new ArrayList<>();
 		try {
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 			resultList = productDao.query();
+			for (Product product : resultList) {
+				ProductInfoVO infoVO = new ProductInfoVO();
+				infoVO.setpId(product.getpId());
+				infoVO.setName(product.getName());
+				infoVO.setPrice(product.getPrice().intValue());
+				infoVO.setCreateTime(formatter.format(product.getCreateTime()));
+				infoList.add(infoVO);
+			}
 			System.out.println(gson.toJson(resultList));
 		} catch (Exception e) {
 			LOGGER.debug("search fail : {}",e);
 		}
 		
-		return resultList;
+		return infoList;
 	}
 
 	@Override

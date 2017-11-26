@@ -7,10 +7,7 @@ apply plugin: 'eclipse-wtp'
 apply plugin: 'com.bmuschko.tomcat'
 
 sourceCompatibility = 1.8   // 設置 JDK 版本
-targetCompatibility = 1.8	// 打包war的jdk版本
 webAppDirName = 'WebContent'    // 設置 WebApp 根目錄
-
-ext.createdDate = new Date().format("yyyy-MM-dd HH:mm")
 
 sourceSets {
     main {
@@ -66,14 +63,15 @@ dependencies {
             "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
     testCompile group: 'junit', name: 'junit', version: '4.11'
     
-    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
-	providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+    //providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
+    providedCompile 'javax.servlet:servlet-api:2.5' // 編譯期
     providedRuntime 'javax.servlet:jstl:1.2'    // 運行時
-    //try jsp web page
-    compile 'jstl:jstl:1.2'
     
     //logger
+	//compile 'ch.qos.logback:logback-classic:' + logbackVersion
 	compile 'org.slf4j:slf4j-simple:1.7.23'
+	//CLOSE this will reduce log print
+	//compile 'org.slf4j:jcl-over-slf4j:1.7.23'
 	compile 'org.slf4j:slf4j-api:1.7.23'
 	compile 'log4j:log4j:1.2.17'
 
@@ -100,6 +98,7 @@ dependencies {
     
     compile 'commons-dbcp:commons-dbcp:1.4'    
     compile 'mysql:mysql-connector-java:5.1.38'    
+	compile 'javax.servlet:jstl:' + jstlVersion  
 	compile 'commons-collections:commons-collections:3.2.2'
 	compile 'commons-codec:commons-codec:1.9'	
     compile 'commons-fileupload:commons-fileupload:1.2.2'
@@ -108,17 +107,16 @@ dependencies {
     
     compile 'com.google.code.gson:gson:1.5'
     
-    
-    // https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver
-	compile group: 'org.mongodb', name: 'mongo-java-driver', version: '3.5.0'
-	
-    // https://mvnrepository.com/artifact/org.mongodb.morphia/morphia
-	compile group: 'org.mongodb.morphia', name: 'morphia', version: '1.3.2'
-    
-    
-    
+    //apache : try to fix @EventListener NoClassDefFoundError
+    //compile 'org.apache.httpcomponents:httpcore:4.4.4'
+    //compile 'org.apache.httpcomponents:httpclient:4.5.1'
+    //compile 'org.apache.velocity:velocity:1.6.4'
+    //compile 'org.apache.httpcomponents:httpmime:4.1.2'
+    //compile 'org.apache.poi:poi-ooxml:3.10.1'
     compile 'org.apache.xmlbeans:xmlbeans:2.6.0'
     
+    //try jsp web page
+    compile 'jstl:jstl:1.2'
     
     compile 'com.fasterxml.jackson.core:jackson-core:2.3.3'
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.3.0'
@@ -126,22 +124,21 @@ dependencies {
     compile 'org.codehaus.jackson:jackson-mapper-asl:1.8.3'
     compile 'org.codehaus.jackson:jackson-core-asl:1.8.3'
     
-    // Unit testing dependencies
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.hamcrest:hamcrest-library:1.3'
-    
+    //exclude the build in hamcrest
+    testCompile('junit:junit:' + junitVersion) {
+        exclude group: 'org.hamcrest'
+    }
+    testCompile 'org.hamcrest:hamcrest-library:' + hamcrestVersion
     testCompile 'org.springframework:spring-test:' + springVersion
     
+	//include in compile only, exclude in the war
+    providedCompile 'javax.servlet:javax.servlet-api:' + servletApiVersion
     
+    // https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver
+	compile group: 'org.mongodb', name: 'mongo-java-driver', version: '3.5.0'
+	compile group: 'org.mongodb.morphia', name: 'morphia', version: '1.3.2'
     
-    
-    //Bat
-    //compile 'org.springframework.boot:spring-boot-starter:1.2.7.RELEASE'
-  	compile 'org.quartz-scheduler:quartz:2.2.2'
-  	compile 'org.springframework:spring-context-support:4.1.8.RELEASE'
- 
- 	
- 	
+    testCompile 'junit:junit:4.12'
 }
 
 compileJava.options.encoding = 'UTF-8'
@@ -150,7 +147,7 @@ tomcat {
     httpPort = 8080
     httpsPort = 8443
     enableSSL = true
-    contextPath = 'noSqlDbPractice'
+    contextPath = 'noSql'
 }
 
 // 設置 Project Facets
@@ -165,17 +162,4 @@ eclipse {
             facet name: 'wst.jsdt.web', version: '1.0'
         }
     }
-}
-
-
-war {
-    doFirst {
-        manifest {
-            attributes  'Project-Version': '1.0.0',
-                    'JVM-Target': targetCompatibility,
-                    'Created-Date': project.createdDate
-        }
-    }
-
-    archiveName 'sunNoSql.war'
 }
