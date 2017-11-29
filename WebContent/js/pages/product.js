@@ -7,6 +7,10 @@ var $dynamicTableSpace;
 
 var mainUrl ='/noSql';
 
+$(document).ready(function(){
+
+});
+
 function getAllProduct(){
 	$('#product_table').hide();
 	$('#no_result').hide();
@@ -80,7 +84,7 @@ function dbDataTable(resultData){
 	var tableHtml;
 	var resultList = document.getElementById('product_table');
 	resultData.forEach(function(dbData, index){
-        //tableHtml = $('<tr/>');
+        tableHtml = $('<tr/>');
 		tableHtml.append("<tr id ='" + dbData.pId + "'>");
         tableHtml.append("<td>" + dbData.pId + "</td>");
         tableHtml.append("<td>" + dbData.name + "</td>");

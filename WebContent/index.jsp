@@ -8,8 +8,8 @@
 <head>
 
 <link href="css/pinkTable.css" rel="stylesheet" type="text/css">
-<script src="js/pages/product.js"></script>
 <jsp:include page="pages/basicPage.jsp"></jsp:include>
+<script src="js/pages/product.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>NoSQL DB practice</title>
 </head>
