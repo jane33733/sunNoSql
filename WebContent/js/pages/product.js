@@ -84,8 +84,9 @@ function dbDataTable(resultData){
 	var tableHtml;
 	var resultList = document.getElementById('product_table');
 	resultData.forEach(function(dbData, index){
-        tableHtml = $('<tr/>');
-		tableHtml.append("<tr id ='" + dbData.pId + "'>");
+//        tableHtml = $('<tr/>');
+		tableHtml = $("<tr id ='" + dbData.pId + "'>");
+//		tableHtml.append("<tr id ='" + dbData.pId + "'>");
         tableHtml.append("<td>" + dbData.pId + "</td>");
         tableHtml.append("<td>" + dbData.name + "</td>");
         tableHtml.append("<td>" + dbData.price + "</td>");

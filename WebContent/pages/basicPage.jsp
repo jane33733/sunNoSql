@@ -15,25 +15,9 @@
 <script src="<c:url value='/js/postJson.js'/>"></script>   
 
 <script>
+var mainUrl ='/noSql/';
 
-if($("#validate").val()){
-	document.location.replace("\pages\error\loginWrong.jsp");
-}
+
 
 </script>
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>basic</title>
-</head>
-
-
-<body>
-
-<input type="hidden" id="mainUrl" value="<c:url value='/'/>"/>
-
-	<!-- 初始化語言(不曉得要怎麼替換) -->
-	<f:setLocale value="zh_TW"/>
-	<input type="hidden" value="false" id="validate"/>
-
-</body>
-</html>
