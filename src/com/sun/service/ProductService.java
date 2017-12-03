@@ -13,6 +13,8 @@ public interface ProductService {
 	
 	boolean addProductList(final List<Product> productList);
 	
+	boolean randomAddProduct();
+	
 	String deleteProduct(final String pId);
 	
 }

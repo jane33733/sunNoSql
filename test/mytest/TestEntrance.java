@@ -5,6 +5,7 @@ import org.junit.Test;
 import com.google.gson.Gson;
 
 import productTest.ProductTest;
+import productTest.SaleRecordTest;
 
 public class TestEntrance {
 
@@ -13,11 +14,14 @@ public class TestEntrance {
 	@Test
 	public void test() {
 		
-		ProductTest pt = new ProductTest();
+//		ProductTest pt = new ProductTest();
 //		pt.insert();
-		pt.query();
+//		pt.query();
 //		pt.delete();
 //		pt.create5();
+		
+		SaleRecordTest srTest = new SaleRecordTest();
+		srTest.create20million();
 		
 	}
 

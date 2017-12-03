@@ -76,5 +76,28 @@ public class ProductServiceImpl implements ProductService {
 		
 		return (result ? pId : "");
 	}
+
+	@Override
+	public boolean randomAddProduct() {
+		boolean result = true;
+		int insetCount = 0;
+		ProductDao productDao = new ProductDao();
+		List<Product> productList = null;
+		while(result) {
+			productList = this.randomProduct();
+			result = productDao.insertBatch(productList);
+		}
+		LOGGER.info("success insert {} rows", insetCount);
+		return result;
+	}
 	
+	private List<Product> randomProduct(){
+		List<Product> productList = new ArrayList<>();
+		for (int i = 0; i < 10000; i++) {
+			Product p = new Product();
+			
+			productList.add(p);
+		}
+		return productList;
+	}
 }
