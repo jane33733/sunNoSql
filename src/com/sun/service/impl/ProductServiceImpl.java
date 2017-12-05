@@ -51,7 +51,7 @@ public class ProductServiceImpl implements ProductService {
 		
 		return infoList;
 	}
-
+	
 	@Override
 	public boolean addProduct(Product product) {
 		boolean result = false;

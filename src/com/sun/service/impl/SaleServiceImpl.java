@@ -18,6 +18,7 @@ import com.google.gson.Gson;
 import com.sun.dao.SaleRecordDao;
 import com.sun.service.SaleService;
 import com.sun.vo.db.SaleRecord;
+import com.sun.vo.transfer.SaleRecordQueryVO;
 
 
 /**
@@ -50,10 +51,11 @@ public class SaleServiceImpl implements SaleService {
 	}
 
 	@Override
-	public boolean addSale(SaleRecord product) {
-		boolean result = false;
+	public List<SaleRecord> queryTopAndLast(SaleRecordQueryVO queryVO) {
+		List<SaleRecord> result = null;
 		SaleRecordDao saleRecordDao = new SaleRecordDao();
-		result = saleRecordDao.insert(product);
+		result = saleRecordDao.queryTopAndLast(queryVO);
+		LOGGER.info("top and last report {}", gson.toJson(result));
 		return result;
 	}
 	

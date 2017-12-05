@@ -1,10 +1,12 @@
 package productTest;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
 
 import com.google.gson.Gson;
 import com.sun.service.ProductService;
@@ -14,6 +16,7 @@ import com.sun.service.impl.SaleServiceImpl;
 import com.sun.vo.db.Product;
 import com.sun.vo.db.SaleRecord;
 import com.sun.vo.output.ProductInfoVO;
+import com.sun.vo.transfer.SaleRecordQueryVO;
 
 public class SaleRecordTest {
 
@@ -64,9 +67,18 @@ public class SaleRecordTest {
 		ps.addProduct(product);
 	}
 
-	public void query() {
-		ProductService ps = new ProductServiceImpl();
-		List<ProductInfoVO> result = ps.queryAll();
+	public void queryReport() {
+		SaleService ss = new SaleServiceImpl();
+		SaleRecordQueryVO queryVO = new SaleRecordQueryVO();
+		
+		LocalDate localDate = LocalDate.now();//For reference
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String formattedString = localDate.format(formatter);
+		
+		
+		queryVO.setStartDate( LocalDate.parse("2017-01-01", formatter) );
+		queryVO.setEndDate( LocalDate.parse("2017-12-31", formatter) );
+		List<SaleRecord> result = ss.queryTopAndLast(queryVO);
 		System.out.println("所有產品" + gson.toJson(result));
 	}
 	

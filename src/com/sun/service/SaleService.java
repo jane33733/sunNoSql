@@ -3,11 +3,12 @@ package com.sun.service;
 import java.util.List;
 
 import com.sun.vo.db.SaleRecord;
+import com.sun.vo.transfer.SaleRecordQueryVO;
 
 
 public interface SaleService {
 	
-	boolean addSale(final SaleRecord sale);
+	public List<SaleRecord> queryTopAndLast(SaleRecordQueryVO queryVO);
 	
 	boolean addSaleList(final List<SaleRecord> saleList);
 	

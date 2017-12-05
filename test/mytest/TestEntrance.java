@@ -21,7 +21,7 @@ public class TestEntrance {
 //		pt.create5();
 		
 		SaleRecordTest srTest = new SaleRecordTest();
-		srTest.create20million();
+//		srTest.create20million();
 		
 	}
 
