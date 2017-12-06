@@ -22,6 +22,8 @@ public class TestEntrance {
 		
 		SaleRecordTest srTest = new SaleRecordTest();
 //		srTest.create20million();
+		srTest.queryReport();
+//		srTest.deleteAll();
 		
 	}
 

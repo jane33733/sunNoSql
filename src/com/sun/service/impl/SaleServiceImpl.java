@@ -1,7 +1,9 @@
 package com.sun.service.impl;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -68,12 +70,17 @@ public class SaleServiceImpl implements SaleService {
 	}
 
 	@Override
-	public String deleteSale(final String pId) {
+	public boolean deleteAllSale() {
 		boolean result = false;
-		SaleRecordDao saleRecordDao = new SaleRecordDao();
-		result = saleRecordDao.delete(pId);
+		try {
+			SaleRecordDao saleRecordDao = new SaleRecordDao();
+			result = saleRecordDao.deleteAll();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
-		return (result ? pId : "");
+		return result;
 	}
 
 	@Override
@@ -115,7 +122,9 @@ public class SaleServiceImpl implements SaleService {
 			saleRecord.setSrId(this.generateSrId());
 			saleRecord.setpId("A00" + randomPid);
 			saleRecord.setAmount(randomAmount);
-			saleRecord.setSaleDate(LocalDate.ofEpochDay(randomDay));
+			Date date = Date.from( (LocalDate.ofEpochDay(randomDay)).atStartOfDay(ZoneId.systemDefault()).toInstant());
+            saleRecord.setSaleDate( date );
+
 			productList.add(saleRecord);
 		}
 		return productList;

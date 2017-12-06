@@ -14,6 +14,6 @@ public interface SaleService {
 	
 	boolean randomAddSale();
 	
-	String deleteSale(final String srId);
+	boolean deleteAllSale();
 	
 }

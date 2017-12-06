@@ -24,25 +24,13 @@ public class SaleRecordTest {
 	private Gson gson = new Gson();
 	
 	public void create20million() {
-		SaleService ps = new SaleServiceImpl();
+		SaleService ss = new SaleServiceImpl();
 		
 		LocalDateTime nowStamp = LocalDateTime.now();
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
 		System.out.println("計算資料新稱需要的時間" + dtf.format(nowStamp));
 		
-//		List<SaleRecord> recordList = new ArrayList();
-//		int pId = 1;
-//		int amount = 1;
-//		for (int i = 0; i < 200000; i++) {
-//			pId = this.randomWithRange(0, 4);
-//			amount = this.randomWithRange(1, 1000);
-//			recordList.add(SaleRecord.create(String.format(	"%06d", i),"A00"+pId, amount, ));
-//		}
-		
-		ps.randomAddSale();
-		
-//		System.out.println("新增" + gson.toJson(recordList) );
-//		ps.addProductList(recordList);
+		ss.randomAddSale();
 		
 		nowStamp = LocalDateTime.now();
 		System.out.println("結束時間" + dtf.format(nowStamp));
@@ -54,18 +42,6 @@ public class SaleRecordTest {
 	   return (int)(Math.random() * range) + min;
 	}
 	
-	public void insert() {
-		ProductService ps = new ProductServiceImpl();
-		
-		Product product = new Product();
-		product.setpId("A001");
-		product.setName("咖哩飯");
-		product.setPrice(BigDecimal.TEN);
-		
-		System.out.println("新增" + gson.toJson(product) );
-		
-		ps.addProduct(product);
-	}
 
 	public void queryReport() {
 		SaleService ss = new SaleServiceImpl();
@@ -82,9 +58,10 @@ public class SaleRecordTest {
 		System.out.println("所有產品" + gson.toJson(result));
 	}
 	
-	public void delete() {
-		ProductService ps = new ProductServiceImpl();
-		ps.deleteProduct("A001");
+	public void deleteAll() {
+		SaleService ss = new SaleServiceImpl();
+		ss.deleteAllSale();
+		System.out.println("end");
 	}
 	
 //	public List<BoardVO> getTestData() {

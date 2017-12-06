@@ -3,7 +3,6 @@ package com.sun.vo.transfer;
 import java.time.LocalDate;
 
 public class SaleRecordQueryVO {
-
 	
 	private LocalDate startDate;
 	private LocalDate endDate;

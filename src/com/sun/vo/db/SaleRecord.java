@@ -1,6 +1,6 @@
 package com.sun.vo.db;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
@@ -19,10 +19,11 @@ public class SaleRecord {
 	private int amount;
 	
 	@Property("saleDate")
-	private LocalDate saleDate;
+	private Date saleDate;
+	// mongo db don't support LocalDate, should use util.Date
 	
 	
-	public static SaleRecord create(String srId, String pId, int amount, LocalDate saleDate ) {
+	public static SaleRecord create(String srId, String pId, int amount, Date saleDate ) {
 		SaleRecord sr = new SaleRecord();
 		sr.setSrId(srId);
 		sr.setpId(pId);
@@ -61,12 +62,12 @@ public class SaleRecord {
 	}
 
 
-	public LocalDate getSaleDate() {
+	public Date getSaleDate() {
 		return saleDate;
 	}
 
 
-	public void setSaleDate(LocalDate saleDate) {
+	public void setSaleDate(Date saleDate) {
 		this.saleDate = saleDate;
 	}
 
