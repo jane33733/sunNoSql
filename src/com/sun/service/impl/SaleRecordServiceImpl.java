@@ -13,7 +13,6 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
@@ -28,16 +27,12 @@ import com.sun.vo.transfer.SaleRecordQueryVO;
 import com.sun.vo.transfer.SrReportIdVO;
 
 
-/**
- * The Class ImpeachServiceImpl.
- */
 @Service
 public class SaleRecordServiceImpl implements SaleRecordService {
 	
 	/** The Constant LOGGER. */
     private static final Logger LOGGER = LoggerFactory.getLogger(SaleRecordServiceImpl.class);
     
-    @Autowired
     private SaleRecordDao saleRecordDao = new SaleRecordDao();
     
     private Gson gson = new Gson();

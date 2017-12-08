@@ -21,6 +21,7 @@ function getMonthRpt(){
 	    },
 	    timeout: 120000,
 	});
+	
 }
 
 
@@ -65,17 +66,51 @@ function searchSuccess(resultData){
 
 		    };
 		
+		
+		var ctx = document.getElementById("canvas").getContext("2d");
+	    window.myBar = new Chart(ctx, {
+	        type: 'bar',
+	        data: barChartData,
+	        options: {
+	            responsive: true,
+	            title:{
+	                display:true,
+	                text:"Chart.js Bar Chart - Multi Axis"
+	            },
+	            tooltips: {
+	                mode: 'index',
+	                intersect: true
+	            },
+	            scales: {
+	                yAxes: [{
+	                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+	                    display: true,
+	                    position: "left",
+	                    id: "y-axis-1",
+	                }, {
+	                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+	                    display: true,
+	                    position: "right",
+	                    id: "y-axis-2",
+	                    gridLines: {
+	                        drawOnChartArea: false
+	                    }
+	                }],
+	            }
+	        }
+	    });
+		
 		//顯示table
 		$('#canvas').show();
 		
 	}else{
-		searchError()
+		searchError();
 	}
 }
 
 
 function searchError(){
-	alert.("no data")
+	alert.("no data");
 }
 
 </script>
@@ -84,42 +119,6 @@ function searchError(){
         <canvas id="canvas"></canvas>
     </div>
     <button id="randomizeData">Randomize Data</button>
-    <script>
-    
-    window.onload = function() {
-        var ctx = document.getElementById("canvas").getContext("2d");
-        window.myBar = new Chart(ctx, {
-            type: 'bar',
-            data: barChartData,
-            options: {
-                responsive: true,
-                title:{
-                    display:true,
-                    text:"Chart.js Bar Chart - Multi Axis"
-                },
-                tooltips: {
-                    mode: 'index',
-                    intersect: true
-                },
-                scales: {
-                    yAxes: [{
-                        type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                        display: true,
-                        position: "left",
-                        id: "y-axis-1",
-                    }, {
-                        type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-                        display: true,
-                        position: "right",
-                        id: "y-axis-2",
-                        gridLines: {
-                            drawOnChartArea: false
-                        }
-                    }],
-                }
-            }
-        });
-    };
 
     
-    </script>
+    

@@ -26,7 +26,6 @@ public class ProductDao{
 		} catch (Exception e) {
 			e.printStackTrace();
 			result = false;
-			
 		}
         return result;
     }
@@ -50,9 +49,6 @@ public class ProductDao{
 		List<Product> productList = new ArrayList<>();
 		Datastore dataStore = MongoUtil.getMorphia();
 		productList = dataStore.createQuery(Product.class).asList();
-//		for (Product product : productList) {
-//			WriteResult wr = dataStore.delete(product);
-//		}
 		return productList;
 	}
 	

@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
@@ -16,16 +15,12 @@ import com.sun.service.ProductService;
 import com.sun.vo.db.Product;
 import com.sun.vo.output.ProductInfoVO;
 
-/**
- * The Class ImpeachServiceImpl.
- */
 @Service
 public class ProductServiceImpl implements ProductService {
 	
 	/** The Constant LOGGER. */
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductServiceImpl.class);
     
-    @Autowired
     private ProductDao productDao = new ProductDao();
     
     private Gson gson = new Gson();

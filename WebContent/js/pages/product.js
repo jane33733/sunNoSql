@@ -15,7 +15,7 @@ function getAllProduct(){
 	$('#no_result').hide();
 	
 	jQuery.ajax({
-	    url: mainUrl + "/product/getAll.do",
+	    url: mainUrl + "product/getAll.do",
 	    dataType: "json",
 	    type: "GET",
 	    contentType: 'application/json; charset=utf-8',

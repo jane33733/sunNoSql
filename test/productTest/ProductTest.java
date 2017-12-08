@@ -18,7 +18,7 @@ public class ProductTest {
 	public void create5() {
 		ProductService ps = new ProductServiceImpl();
 		
-		List<Product> pList = new ArrayList();
+		List<Product> pList = new ArrayList<>();
 		String[] nameArr = {"伯爵紅茶", "梅子綠茶", "珍珠奶茶", "美式咖啡", "抹茶拿鐵"};
 		int[] priceArr = {20, 35, 50, 80, 130};
 		

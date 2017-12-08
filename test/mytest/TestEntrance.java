@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import com.google.gson.Gson;
 
-import productTest.ProductTest;
 import productTest.SaleRecordTest;
 
 public class TestEntrance {
