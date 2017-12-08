@@ -75,27 +75,41 @@ function searchSuccess(resultData){
 	            responsive: true,
 	            title:{
 	                display:true,
-	                text:"Chart.js Bar Chart - Multi Axis"
+	                text:"Year Month Sale Report Chart"
 	            },
 	            tooltips: {
 	                mode: 'index',
 	                intersect: true
 	            },
 	            scales: {
-	                yAxes: [{
-	                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+	                yAxes: [
+	                {
+	                    type: "linear", 
 	                    display: true,
 	                    position: "left",
+	                    id: "y-axis-0",
+	                }, 
+	                {
+	                    type: "linear", 
+	                    display: false,
 	                    id: "y-axis-1",
-	                }, {
-	                    type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-	                    display: true,
-	                    position: "right",
+	                 }, 
+                    {
+	                    type: "linear", 
+	                    display: false,
 	                    id: "y-axis-2",
-	                    gridLines: {
-	                        drawOnChartArea: false
-	                    }
-	                }],
+                    },
+                    {
+	                    type: "linear", 
+	                    display: false,
+	                    id: "y-axis-3",
+                    },
+                    {
+	                    type: "linear", 
+	                    display: false,
+	                    id: "y-axis-4",
+                    }
+                	],
 	            }
 	        }
 	    });
@@ -110,7 +124,8 @@ function searchSuccess(resultData){
 
 
 function searchError(){
-	alert.("no data");
+	var message = "no data";
+	alert(message);
 }
 
 </script>
@@ -118,7 +133,6 @@ function searchError(){
     <div style="width: 75%">
         <canvas id="canvas"></canvas>
     </div>
-    <button id="randomizeData">Randomize Data</button>
 
     
     

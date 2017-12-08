@@ -75,7 +75,7 @@ public class SaleRecordServiceImpl implements SaleRecordService {
 					dateList.add(srReportId.getYear() + "-" + srReportId.getMonth());
 					totalList.add(rsVO.getTotal());
 				}else {
-					break;
+					continue;
 				}
 			}
 			
