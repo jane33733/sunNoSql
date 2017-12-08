@@ -1,6 +1,7 @@
 package com.sun.service.impl;
 
-import java.time.format.DateTimeFormatter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,14 +35,15 @@ public class ProductServiceImpl implements ProductService {
 		List<Product> resultList = new ArrayList<Product>();
 		List<ProductInfoVO> infoList = new ArrayList<>();
 		try {
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+			DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 			resultList = productDao.query();
 			for (Product product : resultList) {
 				ProductInfoVO infoVO = new ProductInfoVO();
 				infoVO.setpId(product.getpId());
 				infoVO.setName(product.getName());
 				infoVO.setPrice(product.getPrice().intValue());
-				infoVO.setCreateTime(formatter.format(product.getCreateTime()));
+				infoVO.setCreateTime(df.format(product.getCreateTime()));
 				infoList.add(infoVO);
 			}
 			System.out.println(gson.toJson(resultList));

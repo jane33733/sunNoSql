@@ -1,0 +1,613 @@
+[{
+		"srReportId": {
+			"pId": "A000",
+			"year": 2016,
+			"month": 12
+		},
+		"total": 364,
+		"pName": "伯爵紅茶"
+	}, {
+		"srReportId": {
+			"pId": "A000",
+			"year": 2017,
+			"month": 1
+		},
+		"total": 15692,
+		"pName": "伯爵紅茶"
+	}, {
+		"srReportId": {
+			"pId": "A000",
+			"year": 2017,
+			"month": 2
+		},
+		"total": 12759,
+		"pName": "伯爵紅茶"
+	}, {
+		"srReportId": {
+			"pId": "A000",
+			"year": 2017,
+			"month": 3
+		},
+		"total": 14767,
+		"pName": "伯爵紅茶"
+	}, {
+		"srReportId": {
+			"pId": "A000",
+			"year": 2017,
+			"month": 4
+		},
+		"total": 16263,
+		"pName": "伯爵紅茶"
+	}, {
+		"srReportId": {
+			"pId": "A000",
+			"year": 2017,
+			"month": 5
+		},
+		"total": 13042,
+		"pName": "伯爵紅茶"
+	}, {
+		"srReportId": {
+			"pId": "A000",
+			"year": 2017,
+			"month": 6
+		},
+		"total": 12904,
+		"pName": "伯爵紅茶"
+	}, {
+		"srReportId": {
+			"pId": "A000",
+			"year": 2017,
+			"month": 7
+		},
+		"total": 13531,
+		"pName": "伯爵紅茶"
+	}, {
+		"srReportId": {
+			"pId": "A000",
+			"year": 2017,
+			"month": 8
+		},
+		"total": 14566,
+		"pName": "伯爵紅茶"
+	}, {
+		"srReportId": {
+			"pId": "A000",
+			"year": 2017,
+			"month": 9
+		},
+		"total": 15068,
+		"pName": "伯爵紅茶"
+	}, {
+		"srReportId": {
+			"pId": "A000",
+			"year": 2017,
+			"month": 10
+		},
+		"total": 13144,
+		"pName": "伯爵紅茶"
+	}, {
+		"srReportId": {
+			"pId": "A000",
+			"year": 2017,
+			"month": 11
+		},
+		"total": 13816,
+		"pName": "伯爵紅茶"
+	}, {
+		"srReportId": {
+			"pId": "A000",
+			"year": 2017,
+			"month": 12
+		},
+		"total": 12076,
+		"pName": "伯爵紅茶"
+	}, {
+		"srReportId": {
+			"pId": "A001",
+			"year": 2016,
+			"month": 12
+		},
+		"total": 650,
+		"pName": "梅子綠茶"
+	}, {
+		"srReportId": {
+			"pId": "A001",
+			"year": 2017,
+			"month": 1
+		},
+		"total": 16216,
+		"pName": "梅子綠茶"
+	}, {
+		"srReportId": {
+			"pId": "A001",
+			"year": 2017,
+			"month": 2
+		},
+		"total": 12509,
+		"pName": "梅子綠茶"
+	}, {
+		"srReportId": {
+			"pId": "A001",
+			"year": 2017,
+			"month": 3
+		},
+		"total": 15808,
+		"pName": "梅子綠茶"
+	}, {
+		"srReportId": {
+			"pId": "A001",
+			"year": 2017,
+			"month": 4
+		},
+		"total": 13322,
+		"pName": "梅子綠茶"
+	}, {
+		"srReportId": {
+			"pId": "A001",
+			"year": 2017,
+			"month": 5
+		},
+		"total": 14117,
+		"pName": "梅子綠茶"
+	}, {
+		"srReportId": {
+			"pId": "A001",
+			"year": 2017,
+			"month": 6
+		},
+		"total": 12370,
+		"pName": "梅子綠茶"
+	}, {
+		"srReportId": {
+			"pId": "A001",
+			"year": 2017,
+			"month": 7
+		},
+		"total": 15486,
+		"pName": "梅子綠茶"
+	}, {
+		"srReportId": {
+			"pId": "A001",
+			"year": 2017,
+			"month": 8
+		},
+		"total": 14141,
+		"pName": "梅子綠茶"
+	}, {
+		"srReportId": {
+			"pId": "A001",
+			"year": 2017,
+			"month": 9
+		},
+		"total": 11311,
+		"pName": "梅子綠茶"
+	}, {
+		"srReportId": {
+			"pId": "A001",
+			"year": 2017,
+			"month": 10
+		},
+		"total": 14661,
+		"pName": "梅子綠茶"
+	}, {
+		"srReportId": {
+			"pId": "A001",
+			"year": 2017,
+			"month": 11
+		},
+		"total": 13638,
+		"pName": "梅子綠茶"
+	}, {
+		"srReportId": {
+			"pId": "A001",
+			"year": 2017,
+			"month": 12
+		},
+		"total": 15860,
+		"pName": "梅子綠茶"
+	}, {
+		"srReportId": {
+			"pId": "A002",
+			"year": 2016,
+			"month": 12
+		},
+		"total": 232,
+		"pName": "珍珠奶茶"
+	}, {
+		"srReportId": {
+			"pId": "A002",
+			"year": 2017,
+			"month": 1
+		},
+		"total": 13593,
+		"pName": "珍珠奶茶"
+	}, {
+		"srReportId": {
+			"pId": "A002",
+			"year": 2017,
+			"month": 2
+		},
+		"total": 11065,
+		"pName": "珍珠奶茶"
+	}, {
+		"srReportId": {
+			"pId": "A002",
+			"year": 2017,
+			"month": 3
+		},
+		"total": 15477,
+		"pName": "珍珠奶茶"
+	}, {
+		"srReportId": {
+			"pId": "A002",
+			"year": 2017,
+			"month": 4
+		},
+		"total": 13385,
+		"pName": "珍珠奶茶"
+	}, {
+		"srReportId": {
+			"pId": "A002",
+			"year": 2017,
+			"month": 5
+		},
+		"total": 13201,
+		"pName": "珍珠奶茶"
+	}, {
+		"srReportId": {
+			"pId": "A002",
+			"year": 2017,
+			"month": 6
+		},
+		"total": 13204,
+		"pName": "珍珠奶茶"
+	}, {
+		"srReportId": {
+			"pId": "A002",
+			"year": 2017,
+			"month": 7
+		},
+		"total": 14915,
+		"pName": "珍珠奶茶"
+	}, {
+		"srReportId": {
+			"pId": "A002",
+			"year": 2017,
+			"month": 8
+		},
+		"total": 15342,
+		"pName": "珍珠奶茶"
+	}, {
+		"srReportId": {
+			"pId": "A002",
+			"year": 2017,
+			"month": 9
+		},
+		"total": 15774,
+		"pName": "珍珠奶茶"
+	}, {
+		"srReportId": {
+			"pId": "A002",
+			"year": 2017,
+			"month": 10
+		},
+		"total": 14799,
+		"pName": "珍珠奶茶"
+	}, {
+		"srReportId": {
+			"pId": "A002",
+			"year": 2017,
+			"month": 11
+		},
+		"total": 14778,
+		"pName": "珍珠奶茶"
+	}, {
+		"srReportId": {
+			"pId": "A002",
+			"year": 2017,
+			"month": 12
+		},
+		"total": 10231,
+		"pName": "珍珠奶茶"
+	}, {
+		"srReportId": {
+			"pId": "A003",
+			"year": 2016,
+			"month": 12
+		},
+		"total": 468,
+		"pName": "美式咖啡"
+	}, {
+		"srReportId": {
+			"pId": "A003",
+			"year": 2017,
+			"month": 1
+		},
+		"total": 14385,
+		"pName": "美式咖啡"
+	}, {
+		"srReportId": {
+			"pId": "A003",
+			"year": 2017,
+			"month": 2
+		},
+		"total": 9526,
+		"pName": "美式咖啡"
+	}, {
+		"srReportId": {
+			"pId": "A003",
+			"year": 2017,
+			"month": 3
+		},
+		"total": 11406,
+		"pName": "美式咖啡"
+	}, {
+		"srReportId": {
+			"pId": "A003",
+			"year": 2017,
+			"month": 4
+		},
+		"total": 12787,
+		"pName": "美式咖啡"
+	}, {
+		"srReportId": {
+			"pId": "A003",
+			"year": 2017,
+			"month": 5
+		},
+		"total": 12550,
+		"pName": "美式咖啡"
+	}, {
+		"srReportId": {
+			"pId": "A003",
+			"year": 2017,
+			"month": 6
+		},
+		"total": 12744,
+		"pName": "美式咖啡"
+	}, {
+		"srReportId": {
+			"pId": "A003",
+			"year": 2017,
+			"month": 7
+		},
+		"total": 14113,
+		"pName": "美式咖啡"
+	}, {
+		"srReportId": {
+			"pId": "A003",
+			"year": 2017,
+			"month": 8
+		},
+		"total": 13203,
+		"pName": "美式咖啡"
+	}, {
+		"srReportId": {
+			"pId": "A003",
+			"year": 2017,
+			"month": 9
+		},
+		"total": 13489,
+		"pName": "美式咖啡"
+	}, {
+		"srReportId": {
+			"pId": "A003",
+			"year": 2017,
+			"month": 10
+		},
+		"total": 16750,
+		"pName": "美式咖啡"
+	}, {
+		"srReportId": {
+			"pId": "A003",
+			"year": 2017,
+			"month": 11
+		},
+		"total": 15659,
+		"pName": "美式咖啡"
+	}, {
+		"srReportId": {
+			"pId": "A003",
+			"year": 2017,
+			"month": 12
+		},
+		"total": 12430,
+		"pName": "美式咖啡"
+	}, {
+		"srReportId": {
+			"pId": "A004",
+			"year": 2016,
+			"month": 12
+		},
+		"total": 502,
+		"pName": "抹茶拿鐵"
+	}, {
+		"srReportId": {
+			"pId": "A004",
+			"year": 2017,
+			"month": 1
+		},
+		"total": 16608,
+		"pName": "抹茶拿鐵"
+	}, {
+		"srReportId": {
+			"pId": "A004",
+			"year": 2017,
+			"month": 2
+		},
+		"total": 12119,
+		"pName": "抹茶拿鐵"
+	}, {
+		"srReportId": {
+			"pId": "A004",
+			"year": 2017,
+			"month": 3
+		},
+		"total": 12185,
+		"pName": "抹茶拿鐵"
+	}, {
+		"srReportId": {
+			"pId": "A004",
+			"year": 2017,
+			"month": 4
+		},
+		"total": 15381,
+		"pName": "抹茶拿鐵"
+	}, {
+		"srReportId": {
+			"pId": "A004",
+			"year": 2017,
+			"month": 5
+		},
+		"total": 14181,
+		"pName": "抹茶拿鐵"
+	}, {
+		"srReportId": {
+			"pId": "A004",
+			"year": 2017,
+			"month": 6
+		},
+		"total": 13880,
+		"pName": "抹茶拿鐵"
+	}, {
+		"srReportId": {
+			"pId": "A004",
+			"year": 2017,
+			"month": 7
+		},
+		"total": 14911,
+		"pName": "抹茶拿鐵"
+	}, {
+		"srReportId": {
+			"pId": "A004",
+			"year": 2017,
+			"month": 8
+		},
+		"total": 15950,
+		"pName": "抹茶拿鐵"
+	}, {
+		"srReportId": {
+			"pId": "A004",
+			"year": 2017,
+			"month": 9
+		},
+		"total": 14195,
+		"pName": "抹茶拿鐵"
+	}, {
+		"srReportId": {
+			"pId": "A004",
+			"year": 2017,
+			"month": 10
+		},
+		"total": 14548,
+		"pName": "抹茶拿鐵"
+	}, {
+		"srReportId": {
+			"pId": "A004",
+			"year": 2017,
+			"month": 11
+		},
+		"total": 11439,
+		"pName": "抹茶拿鐵"
+	}, {
+		"srReportId": {
+			"pId": "A004",
+			"year": 2017,
+			"month": 12
+		},
+		"total": 13649,
+		"pName": "抹茶拿鐵"
+	}, {
+		"srReportId": {
+			"pId": "A005",
+			"year": 2016,
+			"month": 12
+		},
+		"total": 278
+	}, {
+		"srReportId": {
+			"pId": "A005",
+			"year": 2017,
+			"month": 1
+		},
+		"total": 15121
+	}, {
+		"srReportId": {
+			"pId": "A005",
+			"year": 2017,
+			"month": 2
+		},
+		"total": 12941
+	}, {
+		"srReportId": {
+			"pId": "A005",
+			"year": 2017,
+			"month": 3
+		},
+		"total": 15040
+	}, {
+		"srReportId": {
+			"pId": "A005",
+			"year": 2017,
+			"month": 4
+		},
+		"total": 12085
+	}, {
+		"srReportId": {
+			"pId": "A005",
+			"year": 2017,
+			"month": 5
+		},
+		"total": 14275
+	}, {
+		"srReportId": {
+			"pId": "A005",
+			"year": 2017,
+			"month": 6
+		},
+		"total": 13067
+	}, {
+		"srReportId": {
+			"pId": "A005",
+			"year": 2017,
+			"month": 7
+		},
+		"total": 11994
+	}, {
+		"srReportId": {
+			"pId": "A005",
+			"year": 2017,
+			"month": 8
+		},
+		"total": 12906
+	}, {
+		"srReportId": {
+			"pId": "A005",
+			"year": 2017,
+			"month": 9
+		},
+		"total": 13916
+	}, {
+		"srReportId": {
+			"pId": "A005",
+			"year": 2017,
+			"month": 10
+		},
+		"total": 16274
+	}, {
+		"srReportId": {
+			"pId": "A005",
+			"year": 2017,
+			"month": 11
+		},
+		"total": 12572
+	}, {
+		"srReportId": {
+			"pId": "A005",
+			"year": 2017,
+			"month": 12
+		},
+		"total": 12078
+	}
+]

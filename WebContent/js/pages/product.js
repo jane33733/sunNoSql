@@ -5,7 +5,6 @@ var productList = [];
 var $dynamicTableBlock;
 var $dynamicTableSpace;
 
-var mainUrl ='/noSql';
 
 $(document).ready(function(){
 

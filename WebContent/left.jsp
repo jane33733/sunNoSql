@@ -18,7 +18,7 @@ function btnProduct(){
 }
 
 function btnReport(){
-	window.location.replace(mainUrl + "report.html");
+	window.location.replace(mainUrl + "saleReport.jsp");
 }
 
 </script>

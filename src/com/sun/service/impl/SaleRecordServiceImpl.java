@@ -17,20 +17,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
+import com.sun.dao.ProductDao;
 import com.sun.dao.SaleRecordDao;
-import com.sun.service.SaleService;
+import com.sun.service.SaleRecordService;
+import com.sun.vo.db.Product;
 import com.sun.vo.db.SaleRecord;
+import com.sun.vo.output.SaleRecordReportInfoVO;
+import com.sun.vo.transfer.MonthRptRsVO;
 import com.sun.vo.transfer.SaleRecordQueryVO;
+import com.sun.vo.transfer.SrReportIdVO;
 
 
 /**
  * The Class ImpeachServiceImpl.
  */
 @Service
-public class SaleServiceImpl implements SaleService {
+public class SaleRecordServiceImpl implements SaleRecordService {
 	
 	/** The Constant LOGGER. */
-    private static final Logger LOGGER = LoggerFactory.getLogger(SaleServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SaleRecordServiceImpl.class);
     
     @Autowired
     private SaleRecordDao saleRecordDao = new SaleRecordDao();
@@ -53,12 +58,38 @@ public class SaleServiceImpl implements SaleService {
 	}
 
 	@Override
-	public List<SaleRecord> queryTopAndLast(SaleRecordQueryVO queryVO) {
-		List<SaleRecord> result = null;
+	public List<SaleRecordReportInfoVO> queryTopAndLast(SaleRecordQueryVO queryVO) {
+		List<SaleRecordReportInfoVO> resultList = new ArrayList<>();
+		List<MonthRptRsVO> dbList = null;
 		SaleRecordDao saleRecordDao = new SaleRecordDao();
-		result = saleRecordDao.queryTopAndLast(queryVO);
-		LOGGER.info("top and last report {}", gson.toJson(result));
-		return result;
+		ProductDao productDao = new ProductDao();
+		
+		// add product name TODO
+		dbList = saleRecordDao.queryTopAndLast(queryVO);
+		List<Product> pList = productDao.query();
+		for (Product p : pList) {
+			SaleRecordReportInfoVO infoVO = new SaleRecordReportInfoVO();
+			infoVO.setpId(p.getpId());
+			infoVO.setpName(p.getName());
+			
+			List<String> dateList = new ArrayList<>();
+			List<Integer> totalList = new ArrayList<>();
+			for (MonthRptRsVO rsVO : dbList) {
+				SrReportIdVO srReportId = rsVO.getSrReportId();
+				if (p.getpId().equals(srReportId.getpId())) {
+					dateList.add(srReportId.getYear() + "-" + srReportId.getMonth());
+					totalList.add(rsVO.getTotal());
+				}else {
+					break;
+				}
+			}
+			
+			infoVO.setDateList(dateList);
+			infoVO.setTotalList(totalList);
+			resultList.add(infoVO);
+		}
+		LOGGER.info("top and last report {}", gson.toJson(resultList));
+		return resultList;
 	}
 	
 	@Override
