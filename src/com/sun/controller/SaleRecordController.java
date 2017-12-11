@@ -48,6 +48,24 @@ public class SaleRecordController  {
         return infoList;
     }
     
+    @ResponseBody
+    @RequestMapping(value = "insert200ThousandSale", method = RequestMethod.GET)
+    public boolean insert200ThousandSale() throws Exception {
+    	LOGGER.debug("[insert200ThousandSale]------ Start ");
+    	System.out.println("[insert200ThousandSale]------ Start");
+    	boolean result = saleRecordService.randomAddSale();
+    	return result;
+    }
+    
+    @ResponseBody
+    @RequestMapping(value = "deleteSale", method = RequestMethod.GET)
+    public boolean deleteSale() throws Exception {
+    	LOGGER.debug("[deleteSale]------ Start ");
+    	System.out.println("[deleteSale]------ Start");
+    	boolean result = saleRecordService.deleteAllSale();
+    	return result;
+    }
+    
     
 
 }

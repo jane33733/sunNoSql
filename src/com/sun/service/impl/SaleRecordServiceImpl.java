@@ -115,12 +115,12 @@ public class SaleRecordServiceImpl implements SaleRecordService {
 		int insetCount = 0;
 		SaleRecordDao saleRecordDao = new SaleRecordDao();
 		List<SaleRecord> saleList = null;
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 10; i++) {
 			 saleList = this.randomSaleRecord();
 			if (result) {
 				saleList = this.randomSaleRecord();
 				result = saleRecordDao.insertBatch(saleList);
-				insetCount += 100000;
+				insetCount += 10000;
 			}else {
 				break;
 			}
@@ -139,9 +139,9 @@ public class SaleRecordServiceImpl implements SaleRecordService {
 	    long maxDay = LocalDate.of(2017, 12, 31).toEpochDay();
 	    long randomDay = 1L;
 		
-		for (int i = 0; i < 10000; i++) {
+		for (int i = 0; i <= 20000; i++) {
 			randomPid = rn.nextInt(6);
-			randomAmount = rn.nextInt(200) + 1;
+			randomAmount = rn.nextInt(50) + 1;
 			randomDay = ThreadLocalRandom.current().nextLong(minDay, maxDay);
 			
 			SaleRecord saleRecord = new SaleRecord();

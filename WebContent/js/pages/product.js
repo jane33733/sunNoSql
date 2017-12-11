@@ -29,27 +29,19 @@ function getAllProduct(){
 	});
 }
 
-function getProductByPrice(){
-	$('#product_table').hide();
-	$('#no_result').hide();
-	
-	var productQueryVO = {
-			productId: 1,
-			priceBottom: $("#priceBottom").val(),
-			priceTop: $("#priceTop").val()
-	    };
+function insert200ThousandSale(){
 	
 	jQuery.ajax({
-		url: mainUrl + "product/getByPrice.go",
+		url: mainUrl + "saleRecord/insert200ThousandSale.go",
 		data: JSON.stringify(productQueryVO),
 		dataType: "json",
-		type: "POST",
+		type: "GET",
 		contentType: 'application/json; charset=utf-8',
 		success: function(resultData){
-			searchSuccess(resultData);
+			alert(success);
 		} ,
 		error : function(jqXHR, textStatus, errorThrown) {
-			searchError();
+			alert(fail);
 		},
 		timeout: 120000,
 	});
@@ -83,14 +75,11 @@ function dbDataTable(resultData){
 	var tableHtml;
 	var resultList = document.getElementById('product_table');
 	resultData.forEach(function(dbData, index){
-//        tableHtml = $('<tr/>');
 		tableHtml = $("<tr id ='" + dbData.pId + "'>");
-//		tableHtml.append("<tr id ='" + dbData.pId + "'>");
         tableHtml.append("<td>" + dbData.pId + "</td>");
         tableHtml.append("<td>" + dbData.name + "</td>");
         tableHtml.append("<td>" + dbData.price + "</td>");
         tableHtml.append("<td>" + dbData.createTime + "</td>");
-//        tableHtml.append("<td> </td>");
         tableHtml.append("<tr/>");
         
         $("#product_tbody").append(tableHtml);
@@ -99,50 +88,24 @@ function dbDataTable(resultData){
 
 
 
-function deleteProduct(){
-	$('#product_table').hide();
-	$('#no_result').hide();
-	
-	// easy simple way
-	var apiUrl = mainUrl + 'product/deleteProduct.do?';
-	var pId = $("#delPid");
-//	var selectedVal = $multiSelect.val().join();
-//	var calculation = $('input[name="radio_mark"]:checked').val();
-//	var dateType = $timeInterval.val();
-	
-	apiUrl += 'pId=' + pId;
-//	+ $dateStart.val() + '&endDate=' + $dateEnd.val() + '&reportType=' + selectedVal;
-//	location.href = url;
-	
+function deleteSale(){
 	jQuery.ajax({
-		url: apiUrl,
-//		data: JSON.stringify(productQueryVO),
-//		dataType: "json",
+		url: mainUrl + "saleRecord/deleteSale.go",
+		data: JSON.stringify(productQueryVO),
+		dataType: "json",
 		type: "GET",
 		contentType: 'application/json; charset=utf-8',
 		success: function(resultData){
-			deleteSuccess(resultData);
+			alert(success);
 		} ,
 		error : function(jqXHR, textStatus, errorThrown) {
-			searchError();
+			alert(fail);
 		},
 		timeout: 120000,
 	});
-	
 }
 
 
-function deleteSuccess(resultData){
-	
-	if(resultData.length > 0){
-		
-		//隱藏刪除的一列
-		$("#product_table ."+ resultData ).hide();
-		
-	}else{
-		searchError()
-	}
-}
 
 
 

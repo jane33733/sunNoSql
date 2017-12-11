@@ -32,7 +32,6 @@
 			Version 14:00
 			<br>
 			
-			<!--practice restful get-->
 			<button type="button" class="btn btn-primary fr" id="searchProduct" onclick="getAllProduct()">
 				顯示所有產品
 			</button>
@@ -41,31 +40,22 @@
 			<hr/>
 			<br>
 			
-
-			<div class="card bg-light mb-3" style="max-width: 20rem;">
-			  <div class="card-header">DELETE Product</div>
-			  <div class="card-body">
-			    <h4 class="card-title">刪除產品</h4>
-			    <p class="card-text">
-			    	<!-- 刪除的form -->
-					<form class="form-inline">
-					
-						<label for="rg-from">欲刪除的產品ID</label>
-						<div class="form-group">
-						  <input type="text" id="delPid" name="rg-from" class="form-control">
-						</div>
-						
-						<!--practice restful GET -->
-						<button type="button" class="btn btn-primary fr" id="deleteBtn">
-							刪除產品
-						</button>
-					
-					</form>
-
-			  </div>
-			</div>
+	    	<!-- 交易紀錄 -->
+			<form class="form-inline">
+				<button type="button" class="btn btn-primary fr" id="deleteBtn" onclick="deleteSale()">
+					刪除交易紀錄
+				</button>
 			
-		<br><br>
+				<button type="button" class="btn btn-primary fr" id="insertBtn" onclick="insert200ThousandSale()">
+					新增20萬筆交易紀錄
+				</button>
+			</form>
+
+
+		<br>
+		<hr/>
+		<br>
+
 		
 	    	<div class="span8">
 				<!--Body content-->

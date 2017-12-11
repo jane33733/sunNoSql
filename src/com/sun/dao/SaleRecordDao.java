@@ -17,7 +17,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.google.gson.Gson;
-import com.mongodb.DBObject;
 import com.mongodb.WriteResult;
 import com.sun.util.MongoUtil;
 import com.sun.vo.db.SaleRecord;
@@ -112,12 +111,4 @@ public class SaleRecordDao{
 		return resultList;
 	}
 	
-	 private DBObject getDBObject(final DBObject dbObject, final String... path) {
-	        DBObject current = dbObject;
-	        for (String step : path) {
-	            Object next = current.get(step);
-	            current = (DBObject) next;
-	        }
-	        return current;
-	    }
 }

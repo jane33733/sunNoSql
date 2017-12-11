@@ -20,8 +20,8 @@ public class TestEntrance {
 //		pt.create5();
 		
 		SaleRecordTest srTest = new SaleRecordTest();
-//		srTest.create20million();
-		srTest.queryReport();
+		srTest.create200thousand();
+//		srTest.queryReport();
 //		srTest.deleteAll();
 		
 	}
